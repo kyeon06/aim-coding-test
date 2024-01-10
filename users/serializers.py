@@ -28,25 +28,25 @@ class UserLoginSerializer(serializers.Serializer):
     password = serializers.CharField(max_length=128, write_only=True)
     last_login = serializers.CharField(max_length=255, read_only=True)
 
-    def validate(self, data):
-        username = data.get("username", None)
-        password = data.get("password", None)
+    # def validate(self, data):
+    #     username = data.get("username", None)
+    #     password = data.get("password", None)
 
-        if username is None:
-            raise serializers.ValidationError("username을 입력해주세요.")
+    #     if username is None:
+    #         raise serializers.ValidationError("username을 입력해주세요.")
 
-        if password is None:
-            raise serializers.ValidationError("password를 입력해주세요.")
+    #     if password is None:
+    #         raise serializers.ValidationError("password를 입력해주세요.")
 
-        user = authenticate(username=username, password=password)
+    #     user = authenticate(username=username, password=password)
 
-        if user is None:
-            raise serializers.ValidationError("해당 유저를 찾을 수 없습니다.")
+    #     if user is None:
+    #         raise serializers.ValidationError("해당 유저를 찾을 수 없습니다.")
 
-        if not user.is_active:
-            raise serializers.ValidationError("해당 유저는 비활성화되었습니다.")
+    #     if not user.is_active:
+    #         raise serializers.ValidationError("해당 유저는 비활성화되었습니다.")
 
-        user.last_login = timezone.now()
-        user.save(update_fields=["last_login"])
+    #     user.last_login = timezone.now()
+    #     user.save(update_fields=["last_login"])
 
-        return {"username": user.username, "last_login": user.last_login}
+    #     return {"username": user.username, "last_login": user.last_login}
