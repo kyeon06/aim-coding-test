@@ -64,7 +64,7 @@ class UserLoginAPIView(APIView):
                 {"message": "password를 입력해주세요."}, status=status.HTTP_400_BAD_REQUEST
             )
 
-        user = authenticate(request, username=username, password=password)
+        user = authenticate(username=username, password=password)
 
         if user is None:
             return Response(
