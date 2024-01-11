@@ -1,3 +1,7 @@
 from django.urls import path
 
-urlpatterns = []
+from portfolio.views import PortfolioAdviceAPIView
+
+urlpatterns = [
+    path("advice/", PortfolioAdviceAPIView.as_view(), name="portfolio_advice")
+]

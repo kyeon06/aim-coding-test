@@ -4,9 +4,10 @@ from stocks.models import Stock
 from users.models import User
 
 
-class Portfolio(models.Model):
-    TYPE_CHOICES = [("선택", None), ("유형1", "TYPE-1"), ("유형2", "TYPE-2")]
+TYPE_CHOICES = [("선택", None), ("유형1", "TYPE-1"), ("유형2", "TYPE-2")]
 
+
+class Portfolio(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     risk_type = models.CharField(
         max_length=20, choices=TYPE_CHOICES, default="선택", blank=True, null=True
