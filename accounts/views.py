@@ -49,7 +49,7 @@ class AccountAPIView(APIView):
         responses={
             201: AccountDetailSerializer,
             401: "Unauthenticated",
-            400: "계좌가 이미 존재할 경우 OR 잘못된 요청청",
+            400: "계좌가 이미 존재할 경우 OR 잘못된 요청",
         },
     )
     def post(self, request):

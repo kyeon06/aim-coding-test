@@ -6,7 +6,7 @@ from accounts.models import Account, Balance
 class AccountSerializer(serializers.ModelSerializer):
     class Meta:
         model = Account
-        fields = ("__all__",)
+        fields = "__all__"
 
 
 class AccountDetailSerializer(serializers.ModelSerializer):
