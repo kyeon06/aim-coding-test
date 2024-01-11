@@ -23,6 +23,7 @@ CUSTOM_APPS = [
     "users.apps.UsersConfig",
     "stocks.apps.StocksConfig",
     "accounts.apps.AccountsConfig",
+    "portfolio.apps.PortfolioConfig",
 ]
 
 SYSTEM_APPS = [

@@ -18,12 +18,15 @@ schema_view = get_schema_view(
 urlpatterns = [
     # admin
     path("admin/", admin.site.urls),
-
     # api
     path("api/users/", include("users.urls")),
     path("api/accounts/", include("accounts.urls")),
     path("api/stocks/", include("stocks.urls")),
-
+    path("api/portfolio/", include("portfolio.urls")),
     # swagger
-    path("swagger/", schema_view.with_ui("swagger", cache_timeout=0), name="schema-swagger-ui"),
+    path(
+        "swagger/",
+        schema_view.with_ui("swagger", cache_timeout=0),
+        name="schema-swagger-ui",
+    ),
 ]
