@@ -18,7 +18,7 @@ class Account(models.Model):
 # 잔고 입출력 정보 테이블
 class Balance(models.Model):
     balance_date = models.DateTimeField(auto_now_add=True)
-    change_balance = models.BigIntegerField()
+    change_balance = models.BigIntegerField(default=0)
     account = models.ForeignKey(
         Account, related_name="balance_accounts", on_delete=models.CASCADE
     )
